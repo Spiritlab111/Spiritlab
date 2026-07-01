@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spirit Lab | Art & Intention</title>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;700&family=Pacifico&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --obsidian: #0b080f;
+            --gold: #f4d068; /* Shiny metallic gold */
+            --ethereal-purple: #a855f7; /* Vibrant purple accent */
+            --glass: rgba(11, 8, 15, 0.75); /* Deep glass tint for high text contrast */
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Comfortaa', cursive;
+            background-color: var(--obsidian);
+            color: #e2e8f0; /* Crisp light gray text for perfect readability */
+            
+            /* Background image link */
+            background-image: url('https://i.postimg.cc/0NtSs5pB/Screenshot-2026-05-21-9-44-27-PM.png');
+            
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Pacifico', cursive;
+            font-weight: normal;
+            color: var(--gold);
+        }
+
+        /* Navigation Bar */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background: rgba(11, 8, 15, 0.9);
+            backdrop-filter: blur(12px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(244, 208, 104, 0.15);
+        }
+
+        .nav-logo {
+            font-family: 'Pacifico', cursive;
+            color: var(--gold);
+            font-size: 1.8rem;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            color: #e2e8f0;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        /* Hero Section */
+        header {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 140px 20px 60px 20px;
+            background: linear-gradient(to bottom, rgba(11, 8, 15, 0.1), rgba(11, 8, 15, 0.5));
+        }
+
+        .logo-text {
+            font-size: 5.5rem;
+            color: var(--gold);
+            margin: 0;
+            filter: drop-shadow(0 0 15px rgba(244, 208, 104, 0.4));
+        }
+
+        .tagline {
+            color: var(--ethereal-purple);
+            letter-spacing: 4px;
+            font-size: 1.1rem;
+            margin-top: 10px;
+            margin-bottom: 25px;
+            font-weight: bold;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+        }
+
+        /* Intention & Mission Section */
+        .header-intention {
+            max-width: 750px;
+            background: rgba(11, 8, 15, 0.85);
+            padding: 30px 35px;
+            border-radius: 25px;
+            border: 1px solid rgba(244, 208, 104, 0.2);
+            backdrop-filter: blur(15px);
+            margin-bottom: 30px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+        }
+
+        .header-intention h2 {
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 2rem;
+        }
+
+        .mission-statement {
+            font-size: 1.15rem;
+            font-weight: bold;
+            color: var(--gold);
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .header-intention p {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            margin: 0;
+            color: #f1f5f9;
+        }
+
+        /* Connect & Shop Hub Layout */
+        .connect-hub {
+            margin-bottom: 30px;
+            background: rgba(11, 8, 15, 0.6);
+            padding: 20px;
+            border-radius: 25px;
+            border: 1px solid rgba(244, 208, 104, 0.15);
+            backdrop-filter: blur(8px);
+            max-width: 500px;
+            width: 100%;
+        }
+        
+        .hub-title {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--gold);
+            margin-bottom: 12px;
+            font-weight: bold;
+        }
+
+        .hub-links {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .hub-btn {
+            display: block;
+            padding: 10px 15px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(244, 208, 104, 0.3);
+            color: #e2e8f0;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .hub-btn:hover {
+            background: rgba(244, 208, 104, 0.15);
+            border-color: var(--gold);
+            color: var(--gold);
+            transform: scale(1.02);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        /* Dark Luxury Glass Card Style */
+        .card {
+            position: relative;
+            background: var(--glass);
+            border-radius: 30px;
+            padding: 40px;
+            margin-bottom: 40px;
+            overflow: hidden;
+            border: 1px solid rgba(244, 208, 104, 0.2);
+            backdrop-filter: blur(15px);
+            transition: 0.4s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+        }
+
+        .card:hover {
+            border-color: var(--ethereal-purple);
+            box-shadow: 0 15px 35px rgba(168, 85, 247, 0.25);
+            transform: translateY(-2px);
+        }
+
+        /* Bass Yoga Notification Banner */
+        .yoga-alert-banner {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(168, 85, 247, 0.3);
+            border-radius: 20px;
+            padding: 25px;
+            text-align: center;
+            margin-bottom: 40px;
+            box-shadow: inset 0 0 15px rgba(168, 85, 247, 0.1);
+        }
+
+        .yoga-alert-banner h3 {
+            margin-top: 0;
+            margin-bottom: 8px;
+            font-size: 1.4rem;
+        }
+
+        .yoga-alert-banner p {
+            margin: 0 0 15px 0;
+            font-size: 0.95rem;
+            color: #cbd5e1;
+        }
+
+        /* Flexible responsive layout for multiple gallery images */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 15px;
+            border: 1px solid rgba(244, 208, 104, 0.15);
+            transition: all 0.4s ease;
+        }
+
+        .gallery-img:hover {
+            transform: translateY(-4px);
+            border-color: var(--ethereal-purple);
+            box-shadow: 0 8px 20px rgba(168, 85, 247, 0.2);
+        }
+
+        /* Shiny Metallic Buttons */
+        .btn {
+            display: inline-block;
+            padding: 12px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-family: 'Comfortaa', cursive;
+            transition: 0.3s;
+            border: 2px solid var(--gold);
+            color: var(--gold);
+            background: transparent;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+        }
+
+        .btn:hover {
+            background: var(--gold);
+            color: var(--obsidian);
+            transform: scale(1.05);
+            cursor: pointer;
+            box-shadow: 0 0 15px rgba(244, 208, 104, 0.4);
+        }
+
+        .btn-small {
+            padding: 8px 20px;
+            font-size: 0.85rem;
+        }
+
+        /* Product Grid and Image Styling */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            text-align: center;
+            padding: 30px 25px;
+        }
+
+        .product-image-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .product-image-grid-4 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 8px;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .product-image {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 20px;
+            border: 1px solid rgba(244, 208, 104, 0.25);
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .product-image-split {
+            height: 180px;
+        }
+
+        .product-image-quad {
+            height: 95px;
+            border-radius: 12px;
+        }
+
+        /* Dynamic Dropdown Horizontal Scroll Attachment Styles */
+        .dropdown-gallery {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out, margin-top 0.5s ease-out, padding 0.5s ease-out;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 20px;
+            padding: 0 10px;
+            margin-top: 0;
+        }
+
+        .dropdown-gallery.open {
+            max-height: 300px; 
+            margin-top: 20px;
+            padding: 15px 10px;
+            border: 1px solid rgba(168, 85, 247, 0.25);
+        }
+
+        /* Horizontal Track Slider */
+        .dropdown-scroll-track {
+            display: flex;
+            gap: 15px;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            padding-bottom: 10px;
+            
+            /* Custom Scrollbar styling for a cleaner dark lux look */
+            scrollbar-width: thin;
+            scrollbar-color: var(--ethereal-purple) rgba(0,0,0,0.2);
+        }
+
+        /* Custom Scrollbar for Chrome, Safari, and Edge */
+        .dropdown-scroll-track::-webkit-scrollbar {
+            height: 6px;
+        }
+        .dropdown-scroll-track::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+        }
+        .dropdown-scroll-track::-webkit-scrollbar-thumb {
+            background-color: var(--ethereal-purple);
+            border-radius: 10px;
+        }
+
+        .dropdown-img {
+            flex: 0 0 180px; /* Forces images to stay at a fixed width so they overflow and scroll horizontally */
+            height: 180px;
+            object-fit: cover;
+            border-radius: 15px;
+            border: 1px solid rgba(244, 208, 104, 0.15);
+            transition: transform 0.3s;
+        }
+
+        .dropdown-img:hover {
+            transform: scale(1.03);
+            border-color: var(--gold);
+        }
+
+        /* Form Controls */
+        input, textarea {
+            width: 100%;
+            background: rgba(11, 8, 15, 0.6);
+            border: 1px solid rgba(244, 208, 104, 0.15);
+            border-radius: 15px;
+            padding: 15px;
+            color: white;
+            margin-bottom: 15px;
+            font-family: 'Comfortaa', cursive;
+            transition: all 0.3s;
+        }
+
+        input::placeholder, textarea::placeholder {
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: var(--ethereal-purple);
+            background: rgba(11, 8, 15, 0.8);
+            box-shadow: 0 0 10px rgba(168, 85, 247, 0.3);
+        }
+
+        footer {
+            text-align: center;
+            padding: 60px 20px;
+            color: var(--gold);
+            font-size: 0.8rem;
+            opacity: 0.8;
+            border-top: 1px solid rgba(244, 208, 104, 0.15);
+            margin-top: 80px;
+            background: rgba(11, 8, 15, 0.95);
+            backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#" class="nav-logo">Spirit Lab</a>
+        <div class="nav-links">
+            <a href="#bass-yoga">Bass Yoga</a>
+            <a href="#creation">Creations</a>
+        </div>
+    </nav>
+
+    <header>
+        <h1 class="logo-text">Spirit Lab</h1>
+        <p class="tagline">WHERE VIBRATION MEETS CREATION</p>
+        
+        <div class="header-intention">
+            <h2>The Intention</h2>
+            <div class="mission-statement">Driven by love, creative expression, and community, SpiritLab's mission is to nurture deeper spiritual bonds to cultivate wellness in a safe space for a neuro-inclusive experience.</div>
+            <p>We are a wellness & art collective specializing in hand-made Necklaces / Medallions, Laser-cut & 3D printed art, graphic design, hand-painted items, creation & projection of Cymatics, & more! You can also find info about our Bass Yoga events below!</p>
+        </div>
+        
+        <div class="connect-hub">
+            <div class="hub-title">Connect & Shop With Us</div>
+            <div class="hub-links">
+                <a href="https://www.instagram.com/spirit_lab_/" target="_blank" class="hub-btn">Instagram</a>
+                <a href="https://www.etsy.com/shop/spiritlab111/?etsrc=sdt" target="_blank" class="hub-btn">Etsy Shop</a>
+                <a href="https://spirit-lab.myshopify.com/" target="_blank" class="hub-btn">Shopify</a>
+                <a href="mailto:Spiritlab111@gmail.com" class="hub-btn">Email Us</a>
+            </div>
+        </div>
+
+        <a href="#bass-yoga" class="btn">Explore the Lab</a>
+    </header>
+
+    <div class="container">
+        
+        <div id="bass-yoga" class="card" style="padding-top: 40px; margin-top: 20px;">
+            <h2 style="text-align: center; margin-bottom: 10px;">Bass Yoga Events</h2>
+            <p style="text-align: center; max-width: 650px; margin: 0 auto 30px auto; font-size: 0.95rem;">
+                Immerse yourself where sound healing, bass frequencies, and mindful movement collide.
+            </p>
+            
+            <div class="yoga-alert-banner">
+                <h3>Catch the Next Wave</h3>
+                <p>New event dates are being aligned. Drop your email below to be the first to know when tickets and RSVPs open.</p>
+                <a href="#vibrate" class="btn btn-small">Subscribe for Event Updates</a>
+            </div>
+
+            <h3 style="margin-bottom: 20px; font-size: 1.5rem;">Past Events Gallery</h3>
+            <div class="gallery-grid">
+                <img src="https://i.postimg.cc/DznMH9vj/IMG-8336.jpg" alt="Bass Yoga Wave Event" class="gallery-img">
+                <img src="https://i.postimg.cc/C1Xy3c6B/IMG-0265.avif" alt="Bass Yoga Sound Practice" class="gallery-img">
+                <img src="https://i.postimg.cc/pXNbk1FS/IMG-0031.jpg" alt="Bass Yoga Flow Connection" class="gallery-img">
+                <img src="https://i.postimg.cc/2SrTgscv/IMG-1378.jpg" alt="Bass Yoga Community Alignment" class="gallery-img">
+                
+                <img src="https://i.postimg.cc/MT1QpgDL/IMG-3680.jpg" alt="Bass Yoga Collective Vibe" class="gallery-img">
+                <img src="https://i.postimg.cc/fyBk3s0v/IMG-3679.jpg" alt="Bass Yoga Intention Set" class="gallery-img">
+                <img src="https://i.postimg.cc/KYBzPBMQ/IMG-3682.jpg" alt="Bass Yoga Grounded Space" class="gallery-img">
+            </div>
+        </div>
+
+        <div id="creation" style="padding-top: 40px;">
+            <h2 style="text-align: center; margin-bottom: 40px;">Our Creations</h2>
+            <div class="product-grid">
+                
+                <div class="card product-card">
+                    <div style="width: 100%;">
+                        <div class="product-image-container">
+                            <img src="https://i.postimg.cc/QCPGfXk1/Blue-and-White-Modern-Travel-Indonesia-Trifold-Brochure-(2).png" alt="Spirit Lab Flow Fans View 1" class="product-image product-image-split">
+                            <img src="https://i.postimg.cc/7LM5dRRf/Blue-and-White-Modern-Travel-Indonesia-Trifold-Brochure-(3).png" alt="Spirit Lab Flow Fans View 2" class="product-image product-image-split">
+                        </div>
+                        <h3>Flow Gear</h3>
+                        <p>Custom 3D-printed fans engineered precisely for effortless movement, perfect ergonomic balance, and optical light play.</p>
+                    </div>
+                    <button class="btn" onclick="toggleGallery('gallery-flow')">Explore Gear</button>
+                    
+                    <div id="gallery-flow" class="dropdown-gallery">
+                        <div class="dropdown-scroll-track">
+                            <img src="https://i.postimg.cc/QCPGfXk1/Blue-and-White-Modern-Travel-Indonesia-Trifold-Brochure-(2).png" alt="Flow Gear 1" class="dropdown-img">
+                            <img src="https://i.postimg.cc/7LM5dRRf/Blue-and-White-Modern-Travel-Indonesia-Trifold-Brochure-(3).png" alt="Flow Gear 2" class="dropdown-img">
+                            <img src="https://i.postimg.cc/QCPGfXk1/Blue-and-White-Modern-Travel-Indonesia-Trifold-Brochure-(2).png" alt="Flow Gear 3 (Placeholder)" class="dropdown-img">
+                            <img src="https://i.postimg.cc/7LM5dRRf/Blue-and-White-Modern-Travel-Indonesia-Trifold-Brochure-(3).png" alt="Flow Gear 4 (Placeholder)" class="dropdown-img">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card product-card">
+                    <div style="width: 100%;">
+                        <div class="product-image-container">
+                            <img src="https://i.postimg.cc/ryQRJv6W/Blue-and-White-Modern-Travel-Indonesia-Trifold-Brochure-(7).png" alt="Spirit Lab Sacred Geometry Medallion View 1" class="product-image product-image-split">
+                            <img src="https://i.postimg.cc/sgfn8Fxk/Blue-and-White-Modern-Travel-Indonesia-Trifold-Brochure-(6).png" alt="Spirit Lab Sacred Geometry Medallion View 2" class="product-image product-image-split">
+                        </div>
+                        <h3>Medallions</h3>
+                        <p>Intricate, wearable geometry featuring deep textures and sacred arrays to keep your frequency grounded on the move.</p>
+                    </div>
+                    <button class="btn" onclick="toggleGallery('gallery-medallions')">Explore Jewelry</button>
+                    
+                    <div id="gallery-medallions" class="dropdown-gallery">
+                        <div class="dropdown-scroll-track">
+                            <img src="https://i.postimg.cc/ryQRJv6W/Blue-and-White-Modern-Travel-Indonesia-Trifold-Brochure-(7).png" alt="Medallion 1" class="dropdown-img">
+                            <img src="https://i.postimg.cc/sgfn8Fxk/Blue-and-White-Modern-Travel-Indonesia-Trifold-Brochure-(6).png" alt="Medallion 2" class="dropdown-img">
+                            <img src="https://i.postimg.cc/ryQRJv6W/Blue-and-White-Modern-Travel-Indonesia-Trifold-Brochure-(7).png" alt="Medallion 3 (Placeholder)" class="dropdown-img">
+                            <img src="https://i.postimg.cc/sgfn8Fxk/Blue-and-White-Modern-Travel-Indonesia-Trifold-Brochure-(6).png" alt="Medallion 4 (Placeholder)" class="dropdown-img">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card product-card">
+                    <div style="width: 100%;">
+                        <div class="product-image-grid-4">
+                            <img src="https://i.postimg.cc/VkYM1MxM/shroomladyneonpainted.jpg" alt="Shroom Lady Neon Painted" class="product-image product-image-quad">
+                            <img src="https://i.postimg.cc/6QPGdPyf/shroomladygraphicdesign.jpg" alt="Shroom Lady Graphic Design" class="product-image product-image-quad">
+                            <img src="https://i.postimg.cc/43jmKh0d/posterengravedshroomlady.jpg" alt="Poster Engraved Shroom Lady" class="product-image product-image-quad">
+                            <img src="https://i.postimg.cc/gJfSB4TF/Blue-and-White-Modern-Travel-Indonesia-Trifold-Brochure-(10).png" alt="Shroom Lady Line Work" class="product-image product-image-quad">
+                        </div>
+                        <h3>Art & Design</h3>
+                        <p>Bridging psychedelic vision and clean digital design through hand-painted neon canvas and custom engraving textures.</p>
+                    </div>
+                    <button class="btn" onclick="toggleGallery('gallery-art')">View Designs</button>
+                    
+                    <div id="gallery-art" class="dropdown-gallery">
+                        <div class="dropdown-scroll-track">
+                            <img src="https://i.postimg.cc/VkYM1MxM/shroomladyneonpainted.jpg" alt="Art Design 1" class="dropdown-img">
+                            <img src="https://i.postimg.cc/6QPGdPyf/shroomladygraphicdesign.jpg" alt="Art Design 2" class="dropdown-img">
+                            <img src="https://i.postimg.cc/43jmKh0d/posterengravedshroomlady.jpg" alt="Art Design 3 (Placeholder)" class="dropdown-img">
+                            <img src="https://i.postimg.cc/gJfSB4TF/Blue-and-White-Modern-Travel-Indonesia-Trifold-Brochure-(10).png" alt="Art Design 4 (Placeholder)" class="dropdown-img">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card product-card">
+                    <div style="width: 100%;">
+                        <img src="https://i.postimg.cc/CxHRRtsr/Blue-and-White-Modern-Travel-Indonesia-Trifold-Brochure-(9).png" alt="Spirit Lab Kinetic Art Piece" class="product-image">
+                        <h3>Kinetic Art</h3>
+                        <p>Art in motion. Hypnotic structural alignments designed to shift, capture illumination, and alter spatial energy.</p>
+                    </div>
+                    <button class="btn" onclick="toggleGallery('gallery-kinetic')">View Motion</button>
+                    
+                    <div id="gallery-kinetic" class="dropdown-gallery">
+                        <div class="dropdown-scroll-track">
+                            <img src="https://i.postimg.cc/CxHRRtsr/Blue-and-White-Modern-Travel-Indonesia-Trifold-Brochure-(9).png" alt="Kinetic Art 1" class="dropdown-img">
+                            <img src="https://i.postimg.cc/CxHRRtsr/Blue-and-White-Modern-Travel-Indonesia-Trifold-Brochure-(9).png" alt="Kinetic Art 2" class="dropdown-img">
+                            <img src="https://i.postimg.cc/CxHRRtsr/Blue-and-White-Modern-Travel-Indonesia-Trifold-Brochure-(9).png" alt="Kinetic Art 3 (Placeholder)" class="dropdown-img">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card product-card">
+                    <div style="width: 100%;">
+                        <img src="https://i.postimg.cc/sDgDgX0k/Blue-and-White-Modern-Travel-Indonesia-Trifold-Brochure-(4).png" alt="Spirit Lab 3D Printed Geometry Artifact" class="product-image">
+                        <h3>3D Fabrication</h3>
+                        <p>Bringing intricate, complex geometries into physical space with durable, high-quality production filaments.</p>
+                    </div>
+                    <button class="btn" onclick="toggleGallery('gallery-fab')">View Artifacts</button>
+                    
+                    <div id="gallery-fab" class="dropdown-gallery">
+                        <div class="dropdown-scroll-track">
+                            <img src="https://i.postimg.cc/sDgDgX0k/Blue-and-White-Modern-Travel-Indonesia-Trifold-Brochure-(4).png" alt="Fabrication 1" class="dropdown-img">
+                            <img src="https://i.postimg.cc/sDgDgX0k/Blue-and-White-Modern-Travel-Indonesia-Trifold-Brochure-(4).png" alt="Fabrication 2" class="dropdown-img">
+                            <img src="https://i.postimg.cc/sDgDgX0k/Blue-and-White-Modern-Travel-Indonesia-Trifold-Brochure-(4).png" alt="Fabrication 3 (Placeholder)" class="dropdown-img">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card product-card">
+                    <div style="width: 100%;">
+                        <img src="https://i.postimg.cc/9FD5kqk9/Blue-and-White-Modern-Travel-Indonesia-Trifold-Brochure-(5).png" alt="Spirit Lab Custom Art Object" class="product-image">
+                        <h3>Art Objects</h3>
+                        <p>Exploring the intersections of sound waveforms, dimensional textures, and tangible visual art.</p>
+                    </div>
+                    <button class="btn" onclick="toggleGallery('gallery-objects')">View Gallery</button>
+                    
+                    <div id="gallery-objects" class="dropdown-gallery">
+                        <div class="dropdown-scroll-track">
+                            <img src="https://i.postimg.cc/9FD5kqk9/Blue-and-White-Modern-Travel-Indonesia-Trifold-Brochure-(5).png" alt="Art Object 1" class="dropdown-img">
+                            <img src="https://i.postimg.cc/9FD5kqk9/Blue-and-White-Modern-Travel-Indonesia-Trifold-Brochure-(5).png" alt="Art Object 2" class="dropdown-img">
+                            <img src="https://i.postimg.cc/9FD5kqk9/Blue-and-White-Modern-Travel-Indonesia-Trifold-Brochure-(5).png" alt="Art Object 3 (Placeholder)" class="dropdown-img">
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+        <div id="vibrate" class="card" style="margin-top: 60px;">
+            <h2 style="text-align: center;">Vibrate With Us</h2>
+            <p style="text-align: center; margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto;">
+                Have a custom conceptual request, flow prop configuration, or collaboration proposal? Throw your vision into our frequency.
+            </p>
+            <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Intention received! We will connect soon.');">
+                <input type="text" placeholder="Name" required>
+                <input type="email" placeholder="Email" required>
+                <textarea rows="5" placeholder="Your Vision..." required></textarea>
+                <div style="text-align: center;">
+                    <button type="submit" class="btn">Send Intention</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+    <footer>
+        &copy; 2026 Spirit Lab. Made with intention. All rights reserved.
+    </footer>
+
+    <script>
+        function toggleGallery(id) {
+            const gallery = document.getElementById(id);
+            gallery.classList.toggle('open');
+        }
+    </script>
+
+</body>
+</html>
